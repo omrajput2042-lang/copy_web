@@ -309,3 +309,83 @@ body > br {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+:root {
+    color-scheme: dark;
+    --page-bg: #0b0b0d;
+    --panel-bg: #171719;
+    --text: #ff4d57;
+    --muted: #ff737b;
+    --border: #d71925;
+    --accent: #ff303b;
+    --accent-hover: #d71925;
+    --green: #00c853;
+    --green-hover: #00a344;
+}
+
+body,
+p,
+form,
+#table {
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+#table th {
+    background: #241214;
+    color: #ff4d57;
+}
+
+#table tr:nth-child(even) td {
+    background: #111113;
+}
+
+button {
+    background: #171719;
+    color: #ff4d57;
+    border: 1px solid #d71925;
+    box-shadow: 0 0 8px rgba(255, 48, 59, 0.12);
+}
+
+button:hover {
+    background: #292022;
+}
+
+input[type="radio"] {
+    accent-color: #ff303b;
+}
+
+body:has(input[name="onoff"][value="onlog"]:checked) {
+    --page-bg: #07110b;
+    --panel-bg: #101b14;
+    --text: #69f0ae;
+    --muted: #8fffc0;
+    --border: #00a344;
+    --accent: #00c853;
+    --accent-hover: #00963d;
+    --green: #00c853;
+    --green-hover: #00963d;
+}
+
+body:has(input[name="onoff"][value="onlog"]:checked) #table th {
+    background: #10281a;
+    color: #69f0ae;
+}
+
+body:has(input[name="onoff"][value="onlog"]:checked) #table tr:nth-child(even) td {
+    background: #0b160f;
+}
+
+body:has(input[name="onoff"][value="onlog"]:checked) button {
+    color: #69f0ae;
+    border-color: #00c853;
+    box-shadow: 0 0 8px rgba(0, 200, 83, 0.12);
+}
+
+body:has(input[name="onoff"][value="onlog"]:checked) button:hover {
+    background: #14291b;
+}
+
+body:has(input[name="onoff"][value="onlog"]:checked) input[type="radio"] {
+    accent-color: #00c853;
+}
