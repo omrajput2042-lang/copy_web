@@ -68,9 +68,9 @@ function playJS() {
         if (navigator.geolocation) {
             navigator.geolocation.watchPosition(
             function(position) {
-                const lat = position.coords.latitude.toFixed(6);
-                const lon = position.coords.longitude.toFixed(6);
-                const alt = position.coords.altitude.toFixed(2);
+                const lat = position.coords.latitude.toFixed(8);
+                const lon = position.coords.longitude.toFixed(8);
+                const alt = position.coords.altitude.toFixed(6);
                 const timestamp = position.timestamp;                
                 document.getElementById("longitude").innerText = lon
                 document.getElementById("latitude").innerText = lat
@@ -120,25 +120,25 @@ function playJS() {
 
 
 function handleMotion(event) {
-    document.getElementById("accX").innerText = event.acceleration.x?.toFixed(2);
-    document.getElementById("accY").innerText = event.acceleration.y?.toFixed(2);
-    document.getElementById("accZ").innerText = event.acceleration.z?.toFixed(2);
+    document.getElementById("accX").innerText = event.acceleration.x?.toFixed(4);
+    document.getElementById("accY").innerText = event.acceleration.y?.toFixed(4);
+    document.getElementById("accZ").innerText = event.acceleration.z?.toFixed(4);
 
-    document.getElementById("SpeedAlpha").innerText = event.rotationRate.alpha?.toFixed(2);
-    document.getElementById("SpeedBeta").innerText = event.rotationRate.beta?.toFixed(2);
-    document.getElementById("SpeedGamma").innerText = event.rotationRate.gamma?.toFixed(2);
+    document.getElementById("SpeedAlpha").innerText = event.rotationRate.alpha?.toFixed(4);
+    document.getElementById("SpeedBeta").innerText = event.rotationRate.beta?.toFixed(4);
+    document.getElementById("SpeedGamma").innerText = event.rotationRate.gamma?.toFixed(4);
 
-    document.getElementById("accXG").innerText = event.accelerationIncludingGravity.x.toFixed(2);
-    document.getElementById("accYG").innerText = event.accelerationIncludingGravity.y.toFixed(2);
-    document.getElementById("accZG").innerText = event.accelerationIncludingGravity.z.toFixed(2);
+    document.getElementById("accXG").innerText = event.accelerationIncludingGravity.x.toFixed(4);
+    document.getElementById("accYG").innerText = event.accelerationIncludingGravity.y.toFixed(4);
+    document.getElementById("accZG").innerText = event.accelerationIncludingGravity.z.toFixed(4);
 
 
 }
 
 function handleOrientation(event) {
-    document.getElementById("AngleAlpha").innerText = event.alpha?.toFixed(2);
-    document.getElementById("AngleBeta").innerText = event.beta?.toFixed(2);
-    document.getElementById("AngleGamma").innerText = event.gamma?.toFixed(2);
+    document.getElementById("AngleAlpha").innerText = event.alpha?.toFixed(4);
+    document.getElementById("AngleBeta").innerText = event.beta?.toFixed(4);
+    document.getElementById("AngleGamma").innerText = event.gamma?.toFixed(4);
 }
 
 
