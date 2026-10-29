@@ -1,17 +1,18 @@
-/* IMU GPS Logger - responsive styling */
+/* IMU GPS Logger - Dark Red Styling */
 
 :root {
-    color-scheme: light;
-    --page-bg: #f3f6fb;
-    --panel-bg: #ffffff;
-    --text: #182230;
-    --muted: #617084;
-    --border: #d8e0eb;
-    --accent: #2457d6;
-    --accent-hover: #1946b5;
-    --green: #16835f;
-    --green-hover: #10694b;
-    --shadow: 0 6px 22px rgba(20, 38, 70, 0.08);
+    color-scheme: dark;
+    --page-bg: #101010;
+    --panel-bg: #1b1b1b;
+    --text: #f2f2f2;
+    --muted: #d65a5a;
+    --border: #a83232;
+    --accent: #b71c1c;
+    --accent-hover: #e32636;
+    --green: #8f2020;
+    --green-hover: #bd2929;
+    --shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
+    --highlight: #ff4545;
 }
 
 * {
@@ -36,7 +37,7 @@ body {
 
 h1, h2, h3 {
     line-height: 1.25;
-    color: var(--text);
+    color: var(--highlight);
 }
 
 h1 {
@@ -54,8 +55,10 @@ p {
     margin: 10px 0;
     padding: 12px 14px;
     background: var(--panel-bg);
+    color: var(--text);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
     overflow-wrap: anywhere;
 }
 
@@ -66,8 +69,9 @@ p strong {
 }
 
 p span {
+    color: var(--highlight);
     font-variant-numeric: tabular-nums;
-    font-weight: 600;
+    font-weight: 700;
     overflow-wrap: anywhere;
 }
 
@@ -75,21 +79,22 @@ button {
     min-height: 44px;
     margin: 6px 8px 6px 0;
     padding: 10px 17px;
-    border: 0;
-    border-radius: 9px;
-    background: var(--accent);
-    color: #fff;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: #242424;
+    color: var(--highlight);
     font: inherit;
     font-size: 15px;
     font-weight: 650;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(36, 87, 214, 0.16);
+    box-shadow: var(--shadow);
     transition: background-color 0.15s ease, transform 0.15s ease;
     touch-action: manipulation;
 }
 
 button:hover {
-    background: var(--accent-hover);
+    background: #3a1515;
+    border-color: var(--highlight);
 }
 
 button:active {
@@ -98,24 +103,28 @@ button:active {
 
 button:focus-visible,
 input:focus-visible {
-    outline: 3px solid rgba(36, 87, 214, 0.35);
+    outline: 3px solid rgba(255, 69, 69, 0.55);
     outline-offset: 3px;
 }
 
 #toggleBtn {
-    background: #475569;
+    background: #252525;
+    color: #ff7777;
+    border-color: #a83232;
 }
 
 #toggleBtn:hover {
-    background: #334155;
+    background: #3a1515;
 }
 
 #downloadButton {
-    background: var(--green);
+    background: #252525;
+    color: var(--highlight);
+    border-color: #a83232;
 }
 
 #downloadButton:hover {
-    background: var(--green-hover);
+    background: #3a1515;
 }
 
 form {
@@ -126,8 +135,10 @@ form {
     margin: 18px 0;
     padding: 15px 17px;
     background: var(--panel-bg);
+    color: var(--text);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
 }
 
 form label {
@@ -135,13 +146,14 @@ form label {
     align-items: center;
     gap: 8px;
     min-height: 32px;
+    color: var(--text);
     cursor: pointer;
 }
 
 input[type="radio"] {
     width: 18px;
     height: 18px;
-    accent-color: var(--accent);
+    accent-color: var(--highlight);
 }
 
 #table {
@@ -151,7 +163,8 @@ input[type="radio"] {
     border-collapse: separate;
     border-spacing: 0;
     background: var(--panel-bg);
-    border-radius: 10px;
+    color: var(--text);
+    border-radius: 8px;
     overflow: hidden;
     font-size: 13px;
 }
@@ -159,8 +172,8 @@ input[type="radio"] {
 #table th,
 #table td {
     padding: 9px 11px;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    border-right: 1px solid #452222;
+    border-bottom: 1px solid #452222;
     text-align: left;
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
@@ -170,9 +183,14 @@ input[type="radio"] {
     position: sticky;
     top: 0;
     z-index: 1;
-    background: #e8eef8;
-    color: #263a5b;
+    background: #301515;
+    color: var(--highlight);
     font-weight: 700;
+    border-bottom: 1px solid var(--border);
+}
+
+#table td {
+    color: #eeeeee;
 }
 
 #table tr:last-child td {
@@ -185,13 +203,11 @@ input[type="radio"] {
 }
 
 #table tr:nth-child(even) td {
-    background: #f8faff;
+    background: #202020;
 }
 
-body > br {
-    display: block;
-    content: "";
-    margin: 8px 0;
+#table tr:hover td {
+    background: #351919;
 }
 
 .footer {
@@ -201,6 +217,12 @@ body > br {
     text-align: center;
     font-size: 13px;
     border-top: 1px solid var(--border);
+}
+
+body > br {
+    display: block;
+    content: "";
+    margin: 8px 0;
 }
 
 @media (max-width: 700px) {
