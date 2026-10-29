@@ -367,25 +367,13 @@ body:has(input[name="onoff"][value="onlog"]:checked) {
     --green-hover: #00963d;
 }
 
-body:has(input[name="onoff"][value="onlog"]:checked) #table th {
-    background: #10281a;
-    color: #69f0ae;
+/* Recording ON: green theme */
+body:has(input[name="onoff"][value="onlog"]:checked) {
+    background: #07140c;
 }
 
-body:has(input[name="onoff"][value="onlog"]:checked) #table tr:nth-child(even) td {
-    background: #0b160f;
+/* Recording OFF: red theme */
+body:has(input[name="onoff"][value="nonlog"]:checked) {
+    background: #140707;
 }
 
-body:has(input[name="onoff"][value="onlog"]:checked) button {
-    color: #69f0ae;
-    border-color: #00c853;
-    box-shadow: 0 0 8px rgba(0, 200, 83, 0.12);
-}
-
-body:has(input[name="onoff"][value="onlog"]:checked) button:hover {
-    background: #14291b;
-}
-
-body:has(input[name="onoff"][value="onlog"]:checked) input[type="radio"] {
-    accent-color: #00c853;
-}
