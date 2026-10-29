@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="css.css">
+<script src="iPhoneGPS_Acceleration_Sensor0p01secVer3.js"></script>
+<title>GPS and Sensor</title>
+<style>
+    button {
+        font-size: 15px;
+    }
+</style>
+</head>
+
+<body onload="playJS()">
+
+    <h3>Log 100Hz</h3>
+
+    <button onclick="requestPermission()">Get acceleration data if no acceleration information</button>
+    <br>
+
+    <button id="toggleBtn" onclick="unlock()">Unlock Screen (make it No Sleep Mode)</button>
+
+    <p><strong>Date and Time:</strong> <span id="datetime"></span></p>
+
+    <p><strong>Longitude and Latitude:</strong> <span id="longitude"></span>, <span id="latitude"></span></p>
+
+    <p><strong>Direction°:</strong> <span id="GPSorientation"></span></p>
+
+    <p><strong>Speed km/h:</strong> <span id="speed"></span></p>
+
+    <p class="sensor-group">
+        <strong>Acceleration m/s²:</strong>
+        <span class="axis-row">
+            <span class="axis-label">X</span>
+            <span class="axis-value" id="accX"></span>
+        </span>
+        <span class="axis-row">
+            <span class="axis-label">Y</span>
+            <span class="axis-value" id="accY"></span>
+        </span>
+        <span class="axis-row">
+            <span class="axis-label">Z</span>
+            <span class="axis-value" id="accZ"></span>
+        </span>
+    </p>
+
+    <p class="sensor-group">
+        <strong>Acceleration gravity m/s²:</strong>
+        <span class="axis-row">
+            <span class="axis-label">X</span>
+            <span class="axis-value" id="accXG"></span>
+        </span>
+        <span class="axis-row">
+            <span class="axis-label">Y</span>
+            <span class="axis-value" id="accYG"></span>
+        </span>
+        <span class="axis-row">
+            <span class="axis-label">Z</span>
+            <span class="axis-value" id="accZG"></span>
+        </span>
+    </p>
+
+    <p class="sensor-group">
+        <strong>Rotation speed °/s:</strong>
+        <span class="axis-row">
+            <span class="axis-label">Alpha (α)</span>
+            <span class="axis-value" id="SpeedAlpha"></span>
+        </span>
+        <span class="axis-row">
+            <span class="axis-label">Beta (β)</span>
+            <span class="axis-value" id="SpeedBeta"></span>
+        </span>
+        <span class="axis-row">
+            <span class="axis-label">Gamma (γ)</span>
+            <span class="axis-value" id="SpeedGamma"></span>
+        </span>
+    </p>
+
+    <p class="sensor-group">
+        <strong>Angle °:</strong>
+        <span class="axis-row">
+            <span class="axis-label">Alpha (α)</span>
+            <span class="axis-value" id="AngleAlpha"></span>
+        </span>
+        <span class="axis-row">
+            <span class="axis-label">Beta (β)</span>
+            <span class="axis-value" id="AngleBeta"></span>
+        </span>
+        <span class="axis-row">
+            <span class="axis-label">Gamma (γ)</span>
+            <span class="axis-value" id="AngleGamma"></span>
+        </span>
+    </p>
+
+    <p><strong>Altitude:</strong> <span id="altitude"></span></p>
+
+    <p><strong>Time Stamp:</strong> <span id="timestamp"></span></p>
+
+    <p style="font-size: 0.5em">
+        * Altitude and Time Stamp may not obtained by Safari.
+        Please use different web browser if you need Altitude and Time Stamp.
+    </p>
+
+    <form onsubmit="return false;">
+        Start log
+        <label>
+            <input type="radio" name="onoff" value="nonlog" checked>
+            Recording OFF
+        </label>
+        <label>
+            <input type="radio" name="onoff" value="onlog">
+            Recording ON
+        </label>
+    </form>
+
+    <br>
+
+    <button id="downloadButton" type="button" onclick="savecsv()">Download</button>
+
+    <table border="1" style="border-collapse:collapse;" id="table">
+        <tr>
+            <th>Date Time</th>
+            <th>Longitude</th>
+            <th>Latitude</th>
+            <th>Speed km/h</th>
+            <th>Heading angle</th>
+            <th>Acc X m/s²</th>
+            <th>Acc Y m/s²</th>
+            <th>Acc Z m/s²</th>
+            <th>Acc with G X m/s²</th>
+            <th>Acc with G Y m/s²</th>
+            <th>Acc with G Z m/s²</th>
+            <th>Rotation speed α °/s</th>
+            <th>Rotation speed β °/s</th>
+            <th>Rotation speed γ °/s</th>
+            <th>Angle α °</th>
+            <th>Angle β °</th>
+            <th>Angle γ °</th>
+            <th>time [s]</th>
+            <th>Altitude m</th>
+            <th>GPS TimeSatmp</th>
+        </tr>
+    </table>
+
+</body>
+
+<footer>
+    <div class="footer">
+        <p>&copy; 2025 HTML Play</p>
+    </div>
+</footer>
+</html>
